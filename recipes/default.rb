@@ -12,3 +12,8 @@ yum_repository 'ElasticSearch' do
   gpgkey 'http://packages.elasticsearch.org/GPG-KEY-elasticsearch'
   action :create
 end
+
+package 'elasticsearch' do
+  action :install
+  version '1.2.3-1'
+end
