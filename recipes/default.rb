@@ -5,11 +5,11 @@
 # Copyright (C) 2014 IceMobile
 #
 
-yum_repository 'ElasticSearch' do
-  description 'Elasticsearch repository for 1.2.x packages'
-  baseurl 'http://packages.elasticsearch.org/elasticsearch/1.2/centos'
-  gpgcheck true
-  gpgkey 'http://packages.elasticsearch.org/GPG-KEY-elasticsearch'
+yum_repository node['elasticsearch']['repo']['name'] do
+  description node['elasticsearch']['repo']['desc']
+  baseurl node['elasticsearch']['repo']['base']
+  gpgcheck node['elasticsearch']['repo']['gpgcheck']
+  gpgkey node['elasticsearch']['repo']['gpgkey']
   action :create
 end
 
