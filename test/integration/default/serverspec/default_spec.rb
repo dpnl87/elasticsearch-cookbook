@@ -20,6 +20,6 @@ describe port('9300') do
   it { should be_listening }
 end
 
-describe file('/etc/yum.repos.d/ElasticSearch.repo') do
+describe file('/etc/yum.repos.d/elasticsearch.repo') do
   it { should be_file }
 end
