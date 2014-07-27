@@ -13,9 +13,9 @@ yum_repository node['elasticsearch']['repo']['name'] do
   action :create
 end
 
-package 'elasticsearch' do
+package node['elasticsearch']['package']['name'] do
   action :install
-  version '1.2.3-1'
+  version node['elasticsearch']['package']['version']
 end
 
 package 'java-1.7.0-openjdk' do
