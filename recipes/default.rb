@@ -34,7 +34,7 @@ package node['elasticsearch']['java']['package']['name'] do
   action :install
 end
 
-service "elasticsearch" do
+service node['elasticsearch']['service']['name'] do
   action [:enable, :start]
   supports :status => true, :restart => true, :reload => true
 end

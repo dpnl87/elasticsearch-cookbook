@@ -26,4 +26,7 @@ default['elasticsearch']['repo']['gpgkey']   = 'http://packages.elasticsearch.or
 default['elasticsearch']['package']['name']    = 'elasticsearch'
 default['elasticsearch']['package']['version'] = '1.2.3-1'
 
+default['elasticsearch']['service']['name'] = 'elasticsearch'
+
 default['elasticsearch']['java']['package']['name'] = 'java-1.7.0-openjdk'
+
