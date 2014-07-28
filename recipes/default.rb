@@ -30,7 +30,7 @@ package node['elasticsearch']['package']['name'] do
   version node['elasticsearch']['package']['version']
 end
 
-package 'java-1.7.0-openjdk' do
+package node['elasticsearch']['java']['package']['name'] do
   action :install
 end
 
