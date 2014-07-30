@@ -1,7 +1,7 @@
 #
 # Author:: Daniel Paulus (<daniel.paulus@icemobile.com>)
 # Cookbook Name:: elasticsearch
-# Recipe:: default
+# Recipe:: config
 #
 # Copyright 2014, IceMobile.
 #
@@ -17,6 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe 'elasticsearch::repository'
-include_recipe 'elasticsearch::packages'
-include_recipe 'elasticsearch::config'
+service node['elasticsearch']['service']['name'] do
+  action [:enable, :start]
+  supports :status => true, :restart => true, :reload => true
+end
