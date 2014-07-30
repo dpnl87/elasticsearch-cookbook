@@ -24,4 +24,3 @@ yum_repository node['elasticsearch']['repo']['name'] do
   gpgkey node['elasticsearch']['repo']['gpgkey']
   action :create
 end
-
