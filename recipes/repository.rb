@@ -1,7 +1,7 @@
 #
 # Author:: Daniel Paulus (<daniel.paulus@icemobile.com>)
 # Cookbook Name:: elasticsearch
-# Recipe:: default
+# Recipe:: repository
 #
 # Copyright 2014, IceMobile.
 #
@@ -17,18 +17,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_recipe 'elasticsearch::repository'
-
-package node['elasticsearch']['package']['name'] do
-  action :install
-  version node['elasticsearch']['package']['version']
+yum_repository node['elasticsearch']['repo']['name'] do
+  description node['elasticsearch']['repo']['desc']
+  baseurl node['elasticsearch']['repo']['base']
+  gpgcheck node['elasticsearch']['repo']['gpgcheck']
+  gpgkey node['elasticsearch']['repo']['gpgkey']
+  action :create
 end
 
-package node['elasticsearch']['java']['package']['name'] do
-  action :install
-end
-
-service node['elasticsearch']['service']['name'] do
-  action [:enable, :start]
-  supports :status => true, :restart => true, :reload => true
-end
