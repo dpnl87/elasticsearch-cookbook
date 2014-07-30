@@ -19,5 +19,5 @@
 
 service node['elasticsearch']['service']['name'] do
   action [:enable, :start]
-  supports :status => true, :restart => true, :reload => true
+  supports status: true, restart: true, reload: true
 end
