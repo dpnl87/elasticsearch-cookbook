@@ -12,6 +12,7 @@ MethodLength:
 
 LineLength:
   Max: 120
+  Enabled: false
 
 HashSyntax:
   EnforcedStyle: ruby19
@@ -21,3 +22,6 @@ Documentation:
 
 CyclomaticComplexity:
   Max: 12
+
+RescueModifier:
+  Enabled: false
