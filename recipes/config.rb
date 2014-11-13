@@ -17,6 +17,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+template '/etc/init.d/elasticsearch' do
+  source 'init-elasticsearch.erb'
+  owner 'root'
+  group 'root'
+  mode 0744
+end
+
 service node['elasticsearch']['service']['name'] do
   action [:enable, :start]
   supports status: true, restart: true, reload: true
